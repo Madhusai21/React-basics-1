@@ -1,0 +1,54 @@
+
+import React from 'react'
+import { UserProfile } from './components/UserProfile';
+import { Arraysandlists } from './components/Arraysandlists';
+export default function App() {
+            const nestedarray=[
+        {
+            id:1,
+            username:"madhusai",
+            email:"madhusai@gmail.com",
+        },
+        {
+            id:2,
+            username: "gopika",
+            email:  "gopika@gmail.com",
+        },
+        {
+            id:3,
+            username:"jaagruthi",
+            email:"jaagruthi@gmail.com",
+        },
+    ];
+  return (
+    <div>
+        {nestedarray.map((users)=>{
+            return(
+                <Arraysandlists key={users.id} users={users}/>
+            );
+        })}
+    </div>
+  );
+}
+
+
+<---------------------------------------------------props joined with app.jsx ------------------------------------------------------------------------------------------------>
+
+
+import React from 'react'
+
+export  function Arraysandlists({users}) {
+  return (
+    <div>
+        <b> id :</b>
+                    <span>{users.id}</span>
+                    <br/>
+                    <b>username :</b>
+                    <span>{users.username}</span>
+                    <br/>
+                    <b>email : </b>
+                    <span>{users.email}</span>
+                    <br/>
+    </div>
+  );
+}
