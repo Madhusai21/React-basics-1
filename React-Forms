@@ -1,1 +1,46 @@
+================================================================================
+----------------- "React-Forms-Using with -useState hook method " --------------------
+
+import { useState } from "react";
+
+export function RegisterForm() {
+    const [username,setusername]=useState(" ");
+    const[password,setpassword]=useState(" ");
+    const[display,setdisplay]=useState(" ");
+  return (
+    <form>
+        <div>
+            <label htmlFor='username'>Username </label>
+            <input id='username' value={username} onChange={(e)=>{
+                setusername(e.target.value);
+            }}/>
+            </div>
+            <div>
+                <label htmlFor='password'>Password</label>
+                <input id='password' value={password} onChange={(e)=>{
+                    setpassword(e.target.value);
+                }}/>
+        </div>
+        <div>
+            <label htmlFor='display '>
+                Display none
+            </label>
+            <input id='display ' value={display} onChange={(e)=>
+                {
+                    setdisplay(e.target.value);
+                }
+            }/>
+        </div>
+        <div>
+            <span>Username: {username}</span>
+        </div>
+        <div>
+            <span>Password: {password}</span>
+        </div>
+        <div>
+            <span>Display: {displays}</span>
+        </div>
+    </form>
+  );
+}
 
