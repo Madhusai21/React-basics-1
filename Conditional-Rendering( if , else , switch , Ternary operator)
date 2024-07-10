@@ -1,1 +1,102 @@
+------------------- NORMAL REACT CONDITIONAL RENDERING---------------------------------------------------
+(---1 --)
+import React from 'react'
+export  function App() {
+    const memos=true;
+    if(memos){
+  return (
+    <div>welcome to my home sweet home.</div>
+  );
+}
+    return(
+        <div>
+            not need to come my homw!
+        </div>
+    );
+  }
+------------------------------------------Ternary-operator-rendering---------------------------------------------------------------------------------------
+(---2----)
+import React from 'react'
+export  function App() {
+    const memos=true;
+    return memos? (<div>
+      <h1> welcome my village.</h1>
+    </div>
+    ):(
+        <div>
+            <h1> no need to come .</h1>
+        </div>
+    );
+}
+================================================================= genral IF- ELSE-IF -ELSE -conditions===================================================================
+(---3----)
+import React from 'react'
+export  function App() {
+    const memos="null";
+    if(memos== 'verify'){
+        return(
+            <div>
+                <h1> congrats madam </h1>
+            </div>
+        );
+    }
+    else if(memos=='error-verify'){
+        return(
+            <div>
+                <h1> you have  errors in your file madam </h1>
+            </div>
+        );
+    }
+    else if(memos=='supporting-team'){
+        return(
+            <div>
+                <h1> yes mam how can i help you madam</h1>
+            </div>
+        );
+    }
+    else{
+        return(
+            <div>
+                <h1> the wrong information according to your  bank details madam check one's</h1>
+            </div>
+        );
+    }
+}
+=====================================================================  SWICTH CONDITIONS ========================================================================================================
+(----4----)
+import React from 'react'
+export  function App() {
+    const memos="verify";
+    switch(memos){
+        case "verify":
+        return(
+            <div>
+            <h1> congrats madam </h1>
+        </div>
+        );
+        case "error-verfiy":
+            return(
+                <div>
+                <h1> you have  errors in your file madam </h1>
+            </div>  
+            );
+        case "supporting-team":
+            return(
+                <div>
+                <h1> yes mam how can i help you madam</h1>
+            </div>
+            )
+            default:
+                return(
+                    <div>
+                    <h1> yes mam how can i help you madam</h1>
+                </div>
+                );
+    }
+}
+
+
+
+
+
 
