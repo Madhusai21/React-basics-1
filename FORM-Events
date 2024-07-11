@@ -1,1 +1,77 @@
+import React ,{useState} from 'react'
+export function Formevents() {
+    const [username,setusername]=useState(" ")
 
+    const [newstate,setnewstate]=useState("")
+
+    const userdeatails=(Event)=>{
+        setusername(Event.target.value)
+    }
+        const users=(e)=>{
+            e.preventDefault()
+            setnewstate(username)
+        }
+  return (
+    <section className='form-data'>
+        <h2> HELLO ,{newstate}</h2>
+        <form className='form-input' onSubmit={users}>
+            <input type='text ' placeholder='firstname'onChange={userdeatails}/><br/>
+            <br/>
+            <button className='btn' type='submit'>Submit</button>
+        </form>
+
+    </section>
+  );
+}
+================================================== form event csss======================================================
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form-data {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-input {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-input label {
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .form-input input {
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
