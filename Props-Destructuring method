@@ -1,1 +1,41 @@
+======================== props-destructuring======================================
+
+
+import React from 'react'
+import { Destrucring } from './components/Destrucring';
+export  function App() {
+    const car =
+        {
+            model:2021,
+            brand:"maruthi",
+            place:"banaganapalle",
+            price:20,
+        }
+   return(
+    <div>
+        <Destrucring car={car}/>
+    </div>
+   );
+}
+---------------------------------------- join with props method to app.jsx------------------------------------------------------
+
+import React from 'react'
+ export const Destrucring = (props) => {
+    const{ model, brand, place, price}= props.car;
+  return (
+    <div>
+        <h1>{model}</h1>
+        <h1>{brand}</h1>
+        <h1>
+            {place}
+        </h1>
+        <h1>
+           {price}
+        </h1>
+    </div>
+  );
+}
+
+
+
 
