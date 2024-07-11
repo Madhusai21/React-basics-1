@@ -1,1 +1,80 @@
+====== --( 1 )--- =======
+import React from 'react'
+import { useState } from 'react';
+export function Usestateexample() {
+    const [count, setCount] = useState(0);
+    return(
+        <div>
+            <p>you  should {count}click me</p>
+            <button onClick={()=>setCount(count-1)}>click me</button>
+        </div>
+    );
+}
+==================================================================================================================================================================================
+====== ----( 2 ) ----- =========
+import React from 'react'
+import { useState } from 'react';
+export function Usestateexample() {
+      // Declare a state variable named "text", initialized to an empty string
+      const [text, setText] = useState('');
+    
+      return (
+        <div>
+          <input 
+            type="text" value={text}  onChange={(e) => setText(e.target.value)} />
+          <p>You typed: {text}</p>
+        </div>
+      );
+}
+=================================================================================================================================================================================
+======= ---( 3 ) ----- ======
+import React from 'react'
+import { useState } from 'react';
+export function Usestateexample() {
+      const [items, setItems] = useState([]);
 
+    // Declare a state variable named "items", initialized to an empty array
+      const addItem = () => {
+        setItems([...items, `Item ${items.length + 1}`]);
+      };
+    
+      return (
+        <div>
+          <button onClick={addItem}>Add Item</button>
+          <ul>
+            {items.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+   =========================================================================================================================================================================
+-==== ----( 4 ) ----=======
+
+import React from 'react'
+import { useState } from 'react';
+export function Usestateexample() {
+
+// Declare a state variable named "count", initialized to 0
+      const [count, setCount] = useState(0);
+    
+      // Function to increment the count
+      const increment = () => {
+        setCount(count + 1);
+      };
+    
+      // Function to decrement the count
+      const decrement = () => {
+        setCount(count - 1);
+      };
+    
+      return (
+        <div>
+          <h1>Counter</h1>
+          <p>Current Count: {count}</p>
+          <button onClick={increment}>Increment</button>
+          <button onClick={decrement}>Decrement</button>
+        </div>
+      );
+    }
