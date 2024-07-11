@@ -6,7 +6,8 @@ export function Usestateexample() {
     return(
         <div>
             <p>you  should {count}click me</p>
-            <button onClick={()=>setCount(count-1)}>click me</button>
+            <button onClick={()=>setCount(count+1)}>increase me</button>
+            <button onClick={()=>setCount(count-1)}>decrease me </button>
         </div>
     );
 }
