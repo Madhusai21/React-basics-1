@@ -1,5 +1,5 @@
-Step:1
-=========================
+Step:1 ==> install react router dom in vs code 
+===============================================
 wrap app in browser router
 ---------------------------
 import React from 'react'
