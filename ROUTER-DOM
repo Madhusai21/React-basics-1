@@ -1,1 +1,74 @@
+Step:1
+=========================
+wrap app in browser router
+---------------------------
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { App } from './App'
+import {BrowserRouter} from 'react-router-dom'
 
+ReactDOM.createRoot(document.getElementById('root')).render(
+
+  <React.StrictMode>
+    <BrowserRouter>
+    <App/>
+    </BrowserRouter>
+  </React.StrictMode>,
+)
+
+-------------------------------------------------------------------------------
+Step:2
+==============================================
+define route in router
+-------------------------------------------------
+
+import React from 'react'
+import First from './Routing/First';
+import Second from './Routing/Second';
+import Third from './Routing/Third';
+import Foruth from './Routing/Foruth';
+import { Routes,Route } from 'react-router-dom';
+import './App.css'
+import NavBar from './NavBar';
+export  function App() {
+   return(
+    <div>
+        <NavBar/>
+        <Routes>
+            <Route path='/abc' element={ <First/>} />
+            <Route path='/def' element={ <Second/>} />
+            <Route path='/uvw' element={ <Third/>} />
+            <Route path='/xyz' element={ <Foruth/>} />
+            </Routes>
+    </div>
+   );
+}
+----------------------------------------------------------------------------------------------
+Step:3
+=============================
+import React from 'react'
+import { Link } from 'react-router-dom';
+function NavBar() {
+  return (
+    <div className='navbar'>
+        <div className='icons'>
+            <Link to='/abc'>
+            <li>FIRST-PAGE</li>
+            </Link>
+            <Link to='/def'>
+            <li>SECOND-PAGE</li>
+            </Link>
+            <Link to='/uvw'>
+            <li>THIRD-PAGE</li>
+            </Link>
+            <Link to='/xyz'>
+            <li>FOURTH-PAGE</li>
+            </Link>
+           
+        </div>
+    </div>
+  );
+}
+
+export default NavBar
+------------------------------------------------------------------------------------------------------------------------
