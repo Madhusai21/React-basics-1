@@ -1,1 +1,60 @@
+                                                 ======================
+                                                  Fetch Dtat From API 
+                                                  =====================
+ ----( 1 )---------
 
+import {useState,useEffect} from "react";
+
+const userdeatails="https://jsonplaceholder.typicode.com/posts";
+
+export  function FetchAPI() {
+    const[user,setuser] = useState([]);
+
+     const handler = async()=>{
+        const response = await fetch(userdeatails);
+        const newdatas = await response.json();
+        setuser(newdatas);
+     };
+     useEffect(()=>{
+           handler();
+     },[]);
+  return (
+    <div>
+        {user.map((gopika)=>{
+            return(
+                <div style={{border:"1px solid black "}}>
+                   <b>Title : </b>{gopika.title}<br/>
+                    Id: {gopika.id}
+                </div>
+            )
+        })}
+  </div>
+  );
+}
+==============================================================================================================================================================
+----( 2 )
+import {useState,useEffect}from "react";
+const memo="https://jsonplaceholder.typicode.com/comments";
+export function PostfetchAPI() {
+    const[pulls,setpull]=useState([]);
+
+    const band = async()=>{
+        const response = await fetch(memo);
+        const data = await response.json();
+        setpull(data);
+    };
+    useEffect(()=>{
+       band();
+    },[]);
+  return (
+    <div>
+        {pulls.map((madhu)=>{
+            return(
+                <div>
+                 {madhu.name}
+               </div>
+            )
+        })}
+    </div>
+  );
+}
