@@ -1,1 +1,53 @@
+ 1. Merging Objects and Updating State
+============================================
+import React, { useState } from "react";
+export function PostfetchAPI() {
+  const [user, setUser] = useState({
+    name: 'John',
+    age: 30,
+    location: 'New York'
+  });
 
+  const updateLocation = () => {
+    setUser({
+      ...user, // spread existing user properties
+      location: 'Los Angeles' // update location property
+    });
+  };
+
+  return (
+    <div>
+      <h1>Spread Operator in React</h1>
+      <p>Name: {user.name}</p>
+      <p>Age: {user.age}</p>
+      <p>Location: {user.location}</p>
+      <button onClick={updateLocation}>Move to Los Angeles</button>
+    </div>
+  );
+};
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Copying Arrays
+=============================
+import React, { useState, useEffect } from "react";
+export function PostfetchAPI() {
+  // src/App.js
+  const [numbers, setNumbers] = useState([1, 2, 3]);
+
+  const addNumber = () => {
+    setNumbers([...numbers, numbers.length + 1]); // spread existing numbers and add a new number
+  };
+
+  return (
+    <div>
+      <h1>Spread Operator in React</h1>
+      <ul>
+        {numbers.map((number) => (
+          <li key={number}>{number}</li>
+        ))}
+      </ul>
+      <button onClick={addNumber}>Add Number</button>
+    </div>
+  );
+};
+
+  
