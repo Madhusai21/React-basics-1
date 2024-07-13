@@ -5,18 +5,117 @@ STEPS FOR USE CONTEXT HOOK
 3) Custom Component 
 4) Custom Hook
 =============================
+1) app.jsx
+----------
+import React from 'react';
+import Test1 from './Conttext/Test1';
+import { GiftProvider } from './Conttext/Examplecontext';
 
------------ step 1 and step 2 code ----------------------------------
+const App = () => {
+    return (
+        <div>
+            <GiftProvider>
+                <Test1 />
+            </GiftProvider>
+        </div>
+    );
+};
 
-import {  createContext, useState } from "react";
+export default App;
+-------------------------------------------------------------------------------------------------------------------
+2) Examplecontext.jsx
+---------------------------
+// Conttext/Examplecontext.js
+import { createContext, useContext, useState } from 'react';
 
-const  Giftcontext =createContext()
+const GiftContext = createContext();
 
-const GiftProvider=({Children})=>{
-    const [user,setuser]=useState("gopika")
-    return(
-        <Giftcontext.Provider value={{user,setuser}}>
-            {Children}
-        </Giftcontext.Provider>
-    )
-}
+export const GiftProvider = ({ children }) => {
+    const [user, setUser] = useState('gopika');
+
+    return (
+        <GiftContext.Provider value={{ user, setUser }}>
+            {children}
+        </GiftContext.Provider>
+    );
+};
+
+export const useData = () => useContext(GiftContext);
+--------------------------------------------------------------------------------------------------
+3) Test1.jsx
+-------------------------
+// Conttext/Test1.js
+import React from 'react';
+import Test2 from './Test2';
+const Test1 = () => {
+    return (
+        <div>
+            TEST-1
+            <Test2 />
+        </div>
+    );
+};
+
+export default Test1;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+4) Test2.jsx
+-------------------------
+// Conttext/Test2.js
+import React from 'react';
+import Test3 from './Test3';
+import { useData } from './Examplecontext';
+
+const Test2 = () => {
+    const { user } = useData();
+    return (
+        <div>
+            TEST-2
+            <h1>{`hello ${user}`}</h1>
+            <Test3 />
+        </div>
+    );
+};
+
+export default Test2;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5) TEST3.jsx
+--------------------------
+// Conttext/Test3.js
+import React from 'react';
+import Test4 from './Test4';
+
+const Test3 = () => {
+    return (
+        <div>
+            TEST-3
+            <Test4 />
+        </div>
+    );
+};
+
+export default Test3;
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+6) Test4.jsx
+--------------------------
+// Conttext/Test4.js
+import React from 'react';
+import { useData } from './Examplecontext';
+
+const Test4 = () => {
+    const { user } = useData(); // Assuming 'gift' is the 'user' from context
+    return (
+        <div>
+            <h1>
+                TEST-4 <br /> I LOVE YOU {user}
+            </h1>
+        </div>
+    );
+};
+
+export default Test4;
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
