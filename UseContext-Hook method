@@ -1,1 +1,22 @@
+STEPS FOR USE CONTEXT HOOK
+===========================
+1) Create Context
+2)Provider Function
+3) Custom Component 
+4) Custom Hook
+=============================
 
+----------- step 1 and step 2 code ----------------------------------
+
+import {  createContext, useState } from "react";
+
+const  Giftcontext =createContext()
+
+const GiftProvider=({Children})=>{
+    const [user,setuser]=useState("gopika")
+    return(
+        <Giftcontext.Provider value={{user,setuser}}>
+            {Children}
+        </Giftcontext.Provider>
+    )
+}
