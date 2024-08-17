@@ -246,10 +246,10 @@ import { newdata } from '../data'
                 <div>ID: {men.id}</div>
                 <div>Username : {men.name}</div>
                 <div>Email: {men.email}</div>
-                <div>Address: {men.address.street},<br/> Suite: {men.address.suite}, <br/> City:{men.address.city}, <br/> Zipcode: {men.address.zipcode},<br/> Geo:<br/> lat:{men.address.geo.lat},<br/> lng:{men.address.geo.lng} </div>
+                <div>Address: {men.address.street},<br/> Suite: {men.address.suite}, <br/> City:{men.address.city}, <br/> Zipcode: {men.address.zipcode},<br/> Geo <br/> lat:{men.address.geo.lat},<br/> lng:{men.address.geo.lng} </div>
                 <div> Phone {men.phone}</div>
                 <div> Website {men.website}</div>
-                <div> Company:<br/> Name: {men.company.name},<br/>CatchPhrase: {men.company.catchPhrase},<br/> Bs:{men.company.bs}</div>
+                <div> Company<br/> Name: {men.company.name},<br/>CatchPhrase: {men.company.catchPhrase},<br/> Bs:{men.company.bs}</div>
                 </div>
             );
         })}
@@ -272,7 +272,7 @@ lat:-37.3159,
 lng:81.1496
 Phone 1-770-736-8031 x56442
 Website hildegard.org
-Company:
+Company
 Name: Romaguera-Crona,
 CatchPhrase: Multi-layered client-server neural-net,
 Bs:harness real-time e-markets
